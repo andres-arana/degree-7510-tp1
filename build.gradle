@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+// Project versioning
+version = '1.0'
+
+// Java compilation properties
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Técnicas de Diseño - TP1', 'Implementation-Version': version
+    }
+}
+
+// Application assembly properties
+mainClassName = "com.alexaitken.gildedrose.Application"
+
+// Dependency repositories
+repositories {
+  mavenCentral()
+}
+
+// Dependencies
+dependencies {
+  // Guice
+  compile 'com.google.guava:guava:14.0.1'
+
+  // Test dependencies
+  testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
