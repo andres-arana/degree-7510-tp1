@@ -31,3 +31,21 @@ dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
+// Latex generation
+task prepareDocs {
+  description "Prepare doc building environment"
+  doLast {
+    def buildDir = file("build/docs")
+    buildDir.mkdirs()
+  }
+}
+
+task generateDiagrams(type: Exec, dependsOn: prepareDocs) {
+  description "Compile the diagrams to png"
+  commandLine "dia", "--export=build/docs/uml.png", "--filter=png", "src/docs/uml.dia"
+}
+
+task docs(type: Exec, dependsOn: [ prepareDocs, generateDiagrams ]) {
+  description "Generate the pdf report"
+  commandLine "pdflatex", "--output-directory", "build/docs", "src/docs/informe.tex"
+}

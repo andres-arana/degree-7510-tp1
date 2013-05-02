@@ -15,9 +15,6 @@ items inventariados con el paso del tiempo.
 
 El repositorio está estructurado siguiendo las convenciones de maven y gradle:
 
-* **docs**: Documentación.
-
-    * **diagramas**: Diagramas uml de la solución desarrollada.
 
 * **src**: Código fuente y todo lo necesario para construir la aplicación, como
   recursos gráficos, icónos y librerías locales.
@@ -28,6 +25,9 @@ El repositorio está estructurado siguiendo las convenciones de maven y gradle:
       automatizados. Cabe destacar el subdirectorio `resources/samples`, que
 contiene varios archivos de proyectos mda de ejemplo listos para importar en la
 aplicación
+
+    * **docs**: Documentación. Incluye el código fuente del informe presentado,
+      el enunciado original y los diagramas del diseño.
 
 ## Ambiente de desarrollo
 
@@ -77,6 +77,9 @@ aplicación.
 
 * `gradle eclipse`: Genera todos los archivos necesarios para importar el
   proyecto en eclipse.
+
+* `gradle docs`: Compila el informe del trabajo práctico, generando el pdf
+  final en `build/docs`.
 
 Se recomienda leer la documentación de
 [gradle](http://www.gradle.org/docs/current/userguide/userguide_single.html)
